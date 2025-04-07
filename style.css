@@ -1,0 +1,10 @@
+body {
+  display: grid;
+  justify-content: center;
+}
+
+#buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
