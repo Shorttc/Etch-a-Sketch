@@ -11,7 +11,7 @@ button.onmouseout = function(){button.style.backgroundColor = "blue";}
 buttonContainer.appendChild(button);
 
 
-//Function to add div boxes to container
+//Function to add  boxes to container
 function addRows(num){
     let number = num;
     for (let i = 0; i < number; i++){
@@ -20,19 +20,17 @@ function addRows(num){
         row.setAttribute("style", "display: flex;");
         for (let j = 0; j < number; j++){
             const column = document.createElement("div");
-            column.setAttribute("style", "width: 40px; height: 40px; background-color: pink; border: solid 1px; border-color: green;")
+            column.setAttribute("style", "width: 4px; height: 4px; background-color: pink; border: solid 1px; border-color: black;")
             column.onmouseover = function(){column.style.backgroundColor = "black";}
-            column.onmouseout = function(){column.style.backgroundColor = "pink";}
+            //column.onmouseout = function(){column.style.backgroundColor = "pink";}
             row.appendChild(column);
         }
         //Add rows to container
         container.appendChild(row);
-        //Lower number of rows
-        //rows -= 1;
     }
 }
 
 
 //Add the boxes to the container
-addRows(4);
+addRows(90);
 
