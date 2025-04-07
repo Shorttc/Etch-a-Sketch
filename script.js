@@ -12,29 +12,27 @@ buttonContainer.appendChild(button);
 
 
 //Function to add div boxes to container
-function addBoxes(){
-    let boxes = 16;
-    while (boxes != 0){
-      
-        //Create box instance
-        const box = document.createElement("div");
-        box.setAttribute("style", "width: 50px; height: 50px; background-color: gray; border: solid 1px; border-color: yellow; border-radius: 10px;");
-      
-        //Change box color based on hovering
-        box.onmouseover = function(){box.style.backgroundColor = "pink";}
-        box.onmouseout = function(){box.style.backgroundColor = "gray";}
-      
-        //Add boxes to container
-        container.appendChild(box);
-      
-        //Lower number of boxes
-        boxes -= 1;
+function addRows(num){
+    let number = num;
+    for (let i = 0; i < number; i++){
+        //Create row instance
+        const row = document.createElement("div");
+        row.setAttribute("style", "display: flex;");
+        for (let j = 0; j < number; j++){
+            const column = document.createElement("div");
+            column.setAttribute("style", "width: 40px; height: 40px; background-color: pink; border: solid 1px; border-color: green;")
+            column.onmouseover = function(){column.style.backgroundColor = "black";}
+            column.onmouseout = function(){column.style.backgroundColor = "pink";}
+            row.appendChild(column);
+        }
+        //Add rows to container
+        container.appendChild(row);
+        //Lower number of rows
+        //rows -= 1;
     }
 }
 
 
 //Add the boxes to the container
-addBoxes();
+addRows(4);
 
-//Use flex to make the grid
-container.setAttribute("style", "display: flex; flex-wrap: wrap; width: 208px;")
